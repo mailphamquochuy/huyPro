@@ -4,26 +4,33 @@
 	<head><title>Demo js</title></head>
 	<body>
 	<h2>Demo String</h2>
+
+<!--inlcude 1 file js vao html -->
 	<script src="string.js"></script>
 
+<!--Truy cap phan tu cua mang 1 -->
 	<p id = "demo1">element of array type 1</p>
 	<script type="text/javascript">
 		var array = {Name: "Huy", Age: "18", From: "Ha Nam"}
 		document.getElementById('demo1').innerHTML = array["Name"];
 	</script>
 
+<!--Truy cap phan tu cua mang 2 -->
 	<p id = "demo2">element of array type 2</p>
 	<script type="text/javascript">
 		var array = ["Huy", "18", "Ha Nam"]
 		document.getElementById('demo2').innerHTML = array["2"];
 	</script>
 
+<!--Do dai cua mang -->
 	<p id = "demo3">Leng array </p>
 	<script type="text/javascript">
 		var array = ["Huy", "18", "Ha Nam"]
 		document.getElementById('demo3').innerHTML = array.length;
 	</script>
 
+
+<!--Vong lap duyet mang -->
 	<p id = "demo4">Loop in array </p>
 	<script type="text/javascript">
 		
@@ -32,7 +39,7 @@
 			Larray = array.length;
 
 			text = "<ul>";
-				for (i = 0, i < Larray, i++ ){
+				for (i = 0; i < Larray; i++ ){
 
 					text += "<li>" + array[i] + "</li>";
 				}
@@ -40,9 +47,6 @@
 		document.getElementById('demo4').innerHTML = text;
 
 	</script>
-
-
-
 	</body>
 
 </html>
