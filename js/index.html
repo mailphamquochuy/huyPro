@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	
+	<head><title>Demo js</title></head>
+	<body>
+	<h2>Demo String</h2>
+	<script src="string.js"></script>
+
+	<p id = "demo1">element of array type 1</p>
+	<script type="text/javascript">
+		var array = {Name: "Huy", Age: "18", From: "Ha Nam"}
+		document.getElementById('demo1').innerHTML = array["Name"];
+	</script>
+
+	<p id = "demo2">element of array type 2</p>
+	<script type="text/javascript">
+		var array = ["Huy", "18", "Ha Nam"]
+		document.getElementById('demo2').innerHTML = array["2"];
+	</script>
+
+	<p id = "demo3">Leng array </p>
+	<script type="text/javascript">
+		var array = ["Huy", "18", "Ha Nam"]
+		document.getElementById('demo3').innerHTML = array.length;
+	</script>
+
+	<p id = "demo4">Loop in array </p>
+	<script type="text/javascript">
+		
+		var array, Larray, i, text;
+			array = ["Pham Huy", "18 age", " Born in Ha Nam"];
+			Larray = array.length;
+
+			text = "<ul>";
+				for (i = 0, i < Larray, i++ ){
+
+					text += "<li>" + array[i] + "</li>";
+				}
+			text +="</ul>";
+		document.getElementById('demo4').innerHTML = text;
+
+	</script>
+
+
+
+	</body>
+
+</html>
