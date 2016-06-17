@@ -8,14 +8,14 @@
 <!--inlcude 1 file js vao html -->
 	<script src="string.js"></script>
 
-<!--Truy cap phan tu cua mang 1 -->
+<!--Truy cap phan tu cua object sử dụng name index -->
 	<p id = "demo1">element of array type 1</p>
 	<script type="text/javascript">
 		var array = {Name: "Huy", Age: "18", From: "Ha Nam"}
 		document.getElementById('demo1').innerHTML = array["Name"];
 	</script>
 
-<!--Truy cap phan tu cua mang 2 -->
+<!--Truy cap phan tu cua mang sử dụng number index -->
 	<p id = "demo2">element of array type 2</p>
 	<script type="text/javascript">
 		var array = ["Huy", "18", "Ha Nam"]
@@ -38,15 +38,62 @@
 			array = ["Pham Huy", "18 age", " Born in Ha Nam"];
 			Larray = array.length;
 
-			text = "<ul>";
+//			text = "<ul>";
 				for (i = 0; i < Larray; i++ ){
 
 					text += "<li>" + array[i] + "</li>";
 				}
-			text +="</ul>";
+//			text +="</ul>";
 		document.getElementById('demo4').innerHTML = text;
 
 	</script>
+
+<!-- Dem do dai cua mang-->
+	<p id = "demo5">Loop in array </p>
+	<script type="text/javascript">
+		
+		var array, Larray, i, text;
+			array = ["Pham Huy", "18 age", " Born in Ha Nam"];
+			Larray = array.length;
+
+			text = "<ul>";
+				for (i = 0; i < Larray; i++ ){
+
+					text += array[i] + "<br>";
+				}
+		text +="</ul>";
+		document.getElementById('demo5').innerHTML = text;
+
+	</script>
+
+<!--Vong lap For-->
+	<p id = "demo6">Loop with For </p>
+	<script type="text/javascript">	
+	var i;
+	var text = " ";
+
+	for (i = 10; i >= 0; i--){
+		text += i + "<br>"; 	
+	}
+
+	document.getElementById("demo6").innerHTML = text;
+
+	</script>
+
+<!--Vong lap for + switch-->
+	<p id = "demo7">Loop in array </p>
+	<script type="text/javascript">
+	var persion = ["Huy", "Duy", "Nam", "Khang", "Nhut"];
+	var i;
+	var text = " ";
+	for (i = 0; persion[i]; i++ ){
+		 text += persion[i] + "<br>";
+		document.getElementById("demo7").innerHTML = text;
+	}
+	
+	</script>
+
+
 	</body>
 
 </html>
