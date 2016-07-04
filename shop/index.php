@@ -4,11 +4,11 @@
 	<title>Demo Shopping cart</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
-	<meta name ="viewport" content="intial-scale = 0" >
 
 </head>
 <body>
-<?php require("function/product.php");
+<?php 
+require('function/product.php');
 ?>
 <!--Section header-->
 <div id = "header">
@@ -21,7 +21,7 @@
 				<li><a href="#">Mỹ Phẩm</a></li>
 				<li><a href="#">Đồ điện tử</a></li>
 				<li><a href="#">Liên hệ</a></li>
-				<li><a href="function/login.php">Login</a></li>
+				<li><a href="login.php">Login</a></li>
 			</ul>
 		</span>
 	</section>
@@ -58,18 +58,13 @@
 			<tr>
 			<?php
          		for($x = 0; $x <  count($sp); $x++) {
-				    echo "<td>Giá : ". $sp[$x]->gia ." VND</td>";
+         			$codeSP = $sp[$x]->id;
+				    echo "<td>Giá : ". number_format($sp[$x]->gia) ." VND" ."<br>";
+				    echo "<form action ='function/cart.php?item=$codeSP' method ='post'><input type='text' name ='sl'><input type ='submit' value = 'Đặt Hàng'></form>";
+				    echo "</td>";
 				}
      		?>	
 			</tr>
-			<tr>
-			<?php
-         		for($x = 0; $x <  count($sp); $x++) {
-				    echo "<td>Giá : ". $sp[$x]->gia ." VND</td>";
-				}
-     		?>	
-			</tr>
-
 		</table>
 
 	</section>

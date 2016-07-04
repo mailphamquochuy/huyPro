@@ -20,9 +20,13 @@ if (mysql_num_rows($sql) == 0){
 	    	$pro->name = $row['name'];
 	    	$pro->hinh = $row['img'];
 	    	$pro->gia = $row['price'];
+	    	$pro->id = $row['productID'];
 	    	array_push($sp, $pro);
 		}
 	}
+
+
+
 
 mysql_close($conn);
 
