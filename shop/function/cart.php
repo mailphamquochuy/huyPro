@@ -9,9 +9,19 @@
 <body>
 <?php 
 require('product.php');
-//session_start();
-$id = $_GET['item'];
-$qty = $_POST['sl'];
+session_start();
+$id=$_GET['item'];
+$_SESSION['$id'] = $_GET['item'];
+
+if(isset($_SESSION['cart'][$id]))
+{
+ $qty = $_SESSION['cart'][$id] + 1;
+}
+else
+{
+ $qty=1;
+}
+$_SESSION['cart'][$id]=$qty;
 ?>
 <!--Section header-->
 <div id = "header">
@@ -51,19 +61,19 @@ $qty = $_POST['sl'];
 		<th>Số lượng Mua </th>
 		<th>Thành tiền</th>
 		<tr>
-			<?php 
-			for ($x=0; $x < count($sp) ; $x++) { 
-						if($id == $sp[$x]->id){
-							$total = number_format($qty * $sp[$x]->gia);
-							echo "<td>". $sp[$x]->name ."</td>";
-							echo "<td><img src='". $sp[$x]->hinh ."' width='100px' height='auto' /></td>";
-							echo "<td id = 'update'>". $qty ."</td>";
-							echo "<td>". $total ."</td>";
+		<?php
+		for ($x=0; $x < count($sp) ; $x++) { 
+			if($id == $sp[$x]->id){
+				$total = number_format($qty * $sp[$x]->gia);
+					echo "<td>". $sp[$x]->name ."</td>";
+					echo "<td><img src='". $sp[$x]->hinh ."' width='100px' height='auto' /></td>";
+					echo "<td>". $qty ."</td>";
+					echo "<td>". $total ."</td>";
 
-						}
-			}	 
+			}
+		}
+		?>	 
 
-			?>
 		</tr>
 		<tr>
 		<?php
@@ -72,15 +82,6 @@ $qty = $_POST['sl'];
 		echo "<td>". "Cập nhật" ."</td>";
 		echo "<td>". "Đặt hàng" ."</td>";
 		?>
-
-		<script type="text/javascript">
-			
-		document.getElementByID('update').innerHTML = 2;
-
-		</script>
-
-
-
 
 		</tr>
 

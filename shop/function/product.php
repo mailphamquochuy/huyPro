@@ -5,6 +5,7 @@
 $conn = mysql_connect('localhost', 'root', '') or die ("Can't connect database");
 mysql_select_db('shopcart', $conn);
 
+
 //query data
 $sql = mysql_query('SELECT * FROM products');
 
@@ -24,7 +25,6 @@ if (mysql_num_rows($sql) == 0){
 	    	array_push($sp, $pro);
 		}
 	}
-
 
 
 

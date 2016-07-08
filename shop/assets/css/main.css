@@ -22,10 +22,11 @@ body {
 }
 
 ul, li {
-float: right;
-margin-left: 5px;
+float: left;
+margin-left: 70px;
 padding-left: 25px;
 padding-right: 15px;
+
 
 }
 

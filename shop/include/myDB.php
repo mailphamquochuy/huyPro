@@ -3,16 +3,21 @@
 $dbUser = "root";
 $dbName = "shopcart";
 $dbHost = "localhost";
-$dbPassworld = " ";
+$dbPassworld = "";
 
 //Connect
-$connect = mysqli_connect($dbHost, $dbUser, $dbPassworld, $dbName);
+$conn = mysql_connect("$dbHost", "$dbUser", "$dbPassworld") or die ("Can't connect database");
+mysql_select_db('shopcart', $conn);
 
 
 //Test connect
-if (!$connect) {
-	die("Conect fail: " . $mysqli_connect_error())
-}
-echo "connect Successfull!";
+//if (!$conn)
+//{
+//	die("Conect fail: " . $mysqli_connect_error());
+//}
+//else
+//{
+//echo "connect Successfull!";
+//}
 
 ?>
