@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 <head>
 	<title>Chọn sản phẩm</title>
@@ -9,7 +8,6 @@
 require 'product.php';
 ?>
 <body>
-<p>Giỏ hàng đang có 0 sản phẩm </p>
 <?php
 foreach ($products as $listproduct) {
 	echo "<ul>".$listproduct['name'] ."";
@@ -19,8 +17,5 @@ foreach ($products as $listproduct) {
 
 }
 ?>
-
-
-
 </body>
 </html>

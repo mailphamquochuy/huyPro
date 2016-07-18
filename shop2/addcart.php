@@ -2,23 +2,24 @@
 
 session_start();
 require 'product.php';
-//Get id truyen qua
+//Lấy mã sản phẩm từ trang index
 $id = $_GET['item'];
-$_SESSION['cart'] = array();
-array_push($_SESSION['cart'], $id);
+//Đưa mã sản phẩm mới lấy được vào biến session tên là giỏ hàng
+//$_SESSION['giohang']['idproduct'] = $_GET['item'];
 
-if  (isset($_SESSION['cart'])){
-	foreach ($products as $val){
-		var_dump($_SESSION[$val['qty']]);
-		echo "So luong mua:" .$qty = $_SESSION[$val['qty']] + 1 ."";
+//Kiếm tra giỏ hàng trước đó đã được thêm sản phẩm chưa
+if  (isset($_SESSION['giohang'][$id]))
+	{
+		$sl = $_SESSION['giohang'][$id] + 1;
+
 	}
-}
 else
-{
-	$qty = 1;
-}
+	{
+		$sl = 1;
+	}
+//$_SESSION['giohang'][$id] = $sl;
+//$_SESSION['giohang']['sl'] = $_SESSION['giohang'][$id];
 
-
-
-
+//đẩy số lượng mua qua trang xem giỏ hàng
+header('location:viewcart.php');
 ?>

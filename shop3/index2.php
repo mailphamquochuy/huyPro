@@ -61,12 +61,7 @@ require('function/product.php');
          		for($x = 0; $x <  count($sp); $x++) {
          			$codeSP = $sp[$x]->id;
 				    echo "<td>Giá : ". number_format($sp[$x]->gia) ." VND" ."<br>";
-				    echo "<form action ='function/cart.php' method ='post'>
-				            <input type='hidden' name ='id' value='".$codeSP."'/>
-				            <input type='hidden' name ='name' value='".$sp[$x]->name."'/>
-				    		<input type='text' name ='sl' value='1'/>
-				    		<input type ='submit' value = 'Đặt Hàng'/>
-				    	  </form>";
+				    echo "<a href = 'function/cart.php?item=$codeSP' style ='color:#000000'".">Add Cart</a></font";
 				    echo "</td>";
 				}
      		?>	

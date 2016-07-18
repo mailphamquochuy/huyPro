@@ -10,6 +10,33 @@
 <?php 
 require('product.php');
 session_start();
+    // Tao 1 object moi tren server chua du lieu client post len
+$pro = new StdClass;
+$pro->name = $_POST['name'];
+$pro->sl = $_POST['sl'];
+$pro->id = $_POST['id'];
+
+
+if(!isset($_SESSION['giohang'])) {
+	$_SESSION['giohang'] = array();
+}
+
+
+//lap qua $_SESSION['giohang']
+/*  neu da ton tai sp nay thi tang sl len 1 nguoic lai push vao array*/
+array_push($_SESSION['giohang'], $pro);
+
+
+
+$chua_ton_tai_sp_trong_gio = !isset($_SESSION['giohang'][$pro->id]);
+//list ra thi foreach key as value
+if($chua_ton_tai_sp_trong_gio) {
+	$_SESSION['giohang'][$pro->id] = $pro;
+} else {
+	$_SESSION['giohang'][$pro->id]->sl += $pro->sl;
+}
+
+/*
 $id=$_GET['item'];
 $_SESSION['$id'] = $_GET['item'];
 
@@ -22,6 +49,8 @@ else
  $qty=1;
 }
 $_SESSION['cart'][$id]=$qty;
+*/
+
 ?>
 <!--Section header-->
 <div id = "header">

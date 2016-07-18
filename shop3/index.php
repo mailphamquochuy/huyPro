@@ -18,11 +18,11 @@ require('function/product.php');
 		</span>
 		<span class = "menu">
 			<ul>
-				<li><a href="#">Mỹ Phẩm</a></li>
-				<li><a href="#">Đồ điện tử</a></li>
+				<li><a href="product/detailCatalog.php?item=1">Mỹ Phẩm</a></li>
+				<li><a href="product/detailCatalog.php?item=2">Đồ điện tử</a></li>
 				<li><a href="#">Liên hệ</a></li>
 				<li><a href="login.php">Login</a></li>
-				<li><a href="#"><i class="fa fa-shopping-basket" aria-hidden="true"></i> Cart </a></li>
+				<li><a href="function/cart.php"><i class="fa fa-shopping-basket" aria-hidden="true"></i></a></li>
 			</ul>
 		</span>
 	</section>
@@ -37,10 +37,17 @@ require('function/product.php');
 <div id = "wrap">
 
 	<section class = "catalog">
-		<p><a href="#"> Catalog 1 </a></p>
-		<p><a href="#"> Catalog 2 </a></p>
-		<p><a href="#"> Catalog 3 </a></p>
-		<p><a href="#"> Catalog 4 </a></p>
+	<?php
+	echo " ----Danh mục auto----";
+	include('include/myDB.php');
+	include ('function/catalog.php');
+	echo "<br>";
+	echo "----Danh mục html-----";
+	?>
+		<p><a href="product/detailCatalog.php?item=1"> >> Mỹ phẩm </a></p>
+		<p><a href="product/detailCatalog.php?item=2"> >> Điện tử </a></p>
+		<p><a href="#"> >> Trắng da </a></p>
+		<p><a href="#"> >> Giảm cân </a></p>
 	</section>
 	<section class = "content">
 		<table>
@@ -60,13 +67,10 @@ require('function/product.php');
 			<?php
          		for($x = 0; $x <  count($sp); $x++) {
          			$codeSP = $sp[$x]->id;
-				    echo "<td>Giá : ". number_format($sp[$x]->gia) ." VND" ."<br>";
-				    echo "<form action ='function/cart.php' method ='post'>
-				            <input type='hidden' name ='id' value='".$codeSP."'/>
-				            <input type='hidden' name ='name' value='".$sp[$x]->name."'/>
-				    		<input type='text' name ='sl' value='1'/>
-				    		<input type ='submit' value = 'Đặt Hàng'/>
-				    	  </form>";
+				    echo "<td>Giá : ". number_format($sp[$x]->gia) ." VND";
+				    echo "<a href='function/addCart.php?item=$codeSP' style ='color:#000000; float: right; '><i class='fa fa-cart-plus' aria-hidden='true'></i> Thêm Vào giỏ</a>";
+				    echo "<hr>";
+				    echo "Đây là một sản phẩm làm cho mọi chàng trai đều yêu thích";
 				    echo "</td>";
 				}
      		?>	
