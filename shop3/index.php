@@ -21,7 +21,7 @@ require('function/product.php');
 				<li><a href="product/detailCatalog.php?item=1">Mỹ Phẩm</a></li>
 				<li><a href="product/detailCatalog.php?item=2">Đồ điện tử</a></li>
 				<li><a href="#">Liên hệ</a></li>
-				<li><a href="login.php">Login</a></li>
+				<li><a href="function/login.php">Login</a></li>
 				<li><a href="function/cart.php"><i class="fa fa-shopping-basket" aria-hidden="true"></i></a></li>
 			</ul>
 		</span>
